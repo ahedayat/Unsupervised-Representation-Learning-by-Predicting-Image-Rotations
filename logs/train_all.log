@@ -1,0 +1,80 @@
+################################
+Namespace(backbone='resnet34'
+ batch_size=1024
+ ckpt_load_path=None
+ ckpt_prefix='rotation_'
+ ckpt_save_freq=5
+ ckpt_save_path='./checkpoints'
+ feature_layer_index=1
+ gpu=True
+ lr=0.001
+ momentum=0.9
+ num_epochs=20
+ num_workers=2
+ optimizer='adam'
+ report_path='./reports'
+ show_all_angles=True
+ shuffle_data=True
+ test_data_path='./datasets/cifar10'
+ train_data_path='/content/datasets/cifar10'
+ val_data_path='/content/datasets/cifar10'
+ weight_decay=0.005)
+################################
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Number of training data:  180000
+Number of validation data:  20000
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    maximize: False
+    weight_decay: 0.005
+)
+Training Classifier @ Epoch 0: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=73.560, acc2=88.672, loss=0.662, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 0: 100% 19/19 [00:04<00:00,  3.93it/s, acc1=73.741, acc2=88.708, loss=0.680]
+Training Classifier @ Epoch 1: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=78.760, acc2=91.636, loss=0.552, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 1: 100% 19/19 [00:04<00:00,  3.84it/s, acc1=76.213, acc2=89.808, loss=0.619]
+Training Classifier @ Epoch 2: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=80.050, acc2=92.226, loss=0.522, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 2: 100% 19/19 [00:05<00:00,  3.79it/s, acc1=76.681, acc2=90.291, loss=0.596]
+Training Classifier @ Epoch 3: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=80.959, acc2=92.678, loss=0.503, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 3: 100% 19/19 [00:04<00:00,  3.88it/s, acc1=76.357, acc2=88.775, loss=0.627]
+Training Classifier @ Epoch 4: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=81.956, acc2=93.271, loss=0.476, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 4: 100% 19/19 [00:04<00:00,  3.92it/s, acc1=74.121, acc2=88.595, loss=0.688]
+(Epoch: 4) > Model Saved.
+Training Classifier @ Epoch 5: 100% 175/175 [00:51<00:00,  3.38it/s, acc1=88.168, acc2=95.980, loss=0.321, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 5: 100% 19/19 [00:04<00:00,  3.88it/s, acc1=84.298, acc2=94.423, loss=0.412]
+Training Classifier @ Epoch 6: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=91.219, acc2=97.141, loss=0.245, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 6: 100% 19/19 [00:05<00:00,  3.79it/s, acc1=84.637, acc2=94.454, loss=0.421]
+Training Classifier @ Epoch 7: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=93.403, acc2=97.919, loss=0.189, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 7: 100% 19/19 [00:04<00:00,  3.85it/s, acc1=84.509, acc2=94.362, loss=0.448]
+Training Classifier @ Epoch 8: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=95.318, acc2=98.583, loss=0.139, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 8: 100% 19/19 [00:04<00:00,  3.82it/s, acc1=84.252, acc2=94.130, loss=0.513]
+Training Classifier @ Epoch 9: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=97.960, acc2=99.293, loss=0.073, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 9: 100% 19/19 [00:04<00:00,  3.83it/s, acc1=84.529, acc2=94.444, loss=0.567]
+(Epoch: 9) > Model Saved.
+Training Classifier @ Epoch 10: 100% 175/175 [00:51<00:00,  3.38it/s, acc1=98.626, acc2=99.428, loss=0.053, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 10: 100% 19/19 [00:04<00:00,  3.83it/s, acc1=84.360, acc2=94.305, loss=0.615]
+Training Classifier @ Epoch 11: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=98.988, acc2=99.517, loss=0.042, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 11: 100% 19/19 [00:04<00:00,  3.83it/s, acc1=84.272, acc2=94.192, loss=0.649]
+Training Classifier @ Epoch 12: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=99.190, acc2=99.569, loss=0.034, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 12: 100% 19/19 [00:05<00:00,  3.76it/s, acc1=84.113, acc2=93.940, loss=0.688]
+Training Classifier @ Epoch 13: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=99.395, acc2=99.644, loss=0.028, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 13: 100% 19/19 [00:05<00:00,  3.79it/s, acc1=84.185, acc2=94.022, loss=0.689]
+Training Classifier @ Epoch 14: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=99.408, acc2=99.653, loss=0.028, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 14: 100% 19/19 [00:04<00:00,  3.89it/s, acc1=84.118, acc2=93.961, loss=0.696]
+(Epoch: 14) > Model Saved.
+Training Classifier @ Epoch 15: 100% 175/175 [00:51<00:00,  3.39it/s, acc1=99.419, acc2=99.652, loss=0.027, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 15: 100% 19/19 [00:04<00:00,  3.84it/s, acc1=84.108, acc2=93.873, loss=0.700]
+Training Classifier @ Epoch 16: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=99.443, acc2=99.657, loss=0.026, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 16: 100% 19/19 [00:05<00:00,  3.77it/s, acc1=84.072, acc2=93.904, loss=0.707]
+Training Classifier @ Epoch 17: 100% 175/175 [00:51<00:00,  3.40it/s, acc1=99.448, acc2=99.662, loss=0.026, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 17: 100% 19/19 [00:04<00:00,  3.84it/s, acc1=84.128, acc2=93.827, loss=0.712]
+Training Classifier @ Epoch 18: 100% 175/175 [00:51<00:00,  3.41it/s, acc1=99.464, acc2=99.670, loss=0.025, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 18: 100% 19/19 [00:04<00:00,  3.83it/s, acc1=84.113, acc2=93.868, loss=0.715]
+Training Classifier @ Epoch 19: 100% 175/175 [00:51<00:00,  3.42it/s, acc1=99.471, acc2=99.672, loss=0.025, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 19: 100% 19/19 [00:05<00:00,  3.73it/s, acc1=84.082, acc2=93.812, loss=0.720]
+(Epoch: 19) > Model Saved.

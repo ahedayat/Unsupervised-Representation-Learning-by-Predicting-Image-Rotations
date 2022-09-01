@@ -1,0 +1,366 @@
+################################
+Namespace(backbone='resnet34'
+ batch_size=1024
+ ckpt_load_path='./checkpoints_all/rotation_final_all.ckpt'
+ ckpt_prefix='classification'
+ ckpt_save_freq=20
+ ckpt_save_path='./checkpoints_classification'
+ feature_layer_index=3
+ gpu=True
+ lr=0.001
+ momentum=0.9
+ num_epochs=100
+ num_workers=2
+ optimizer='adam'
+ report_path='./reports_classification_all_3'
+ show_all_angles=True
+ shuffle_data=False
+ test_data_path='./datasets/cifar10'
+ train_data_path='/content/datasets/cifar10'
+ val_data_path='/content/datasets/cifar10'
+ weight_decay=0.0005)
+################################
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Loading './checkpoints_all/rotation_final_all.ckpt'
+Model is loaded successfully.
+MyResNet34(
+  (backbone): ResNet(
+    (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (3): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (3): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (4): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (5): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (layer4): Identity()
+    (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+    (fc): Identity()
+  )
+  (my_classifier): Sequential(
+    (0): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Dropout(p=0.2, inplace=True)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): Dropout(p=0.2, inplace=True)
+    (5): Linear(in_features=64, out_features=10, bias=True)
+  )
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    maximize: False
+    weight_decay: 0.0005
+)
+Training Classifier @ Epoch 0: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=32.102, acc2=53.270, loss=1.853, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 0: 100% 4/4 [00:00<00:00,  4.22it/s, acc1=34.033, acc2=58.521, loss=1.910]
+Training Classifier @ Epoch 1: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=43.100, acc2=66.608, loss=1.501, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 1: 100% 4/4 [00:00<00:00,  4.19it/s, acc1=46.094, acc2=68.799, loss=1.467]
+Training Classifier @ Epoch 2: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=45.896, acc2=69.009, loss=1.441, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 2: 100% 4/4 [00:00<00:00,  4.25it/s, acc1=47.827, acc2=70.093, loss=1.387]
+Training Classifier @ Epoch 3: 100% 43/43 [00:08<00:00,  5.34it/s, acc1=46.911, acc2=70.013, loss=1.416, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 3: 100% 4/4 [00:00<00:00,  4.13it/s, acc1=48.413, acc2=70.850, loss=1.366]
+Training Classifier @ Epoch 4: 100% 43/43 [00:08<00:00,  5.35it/s, acc1=47.872, acc2=70.553, loss=1.401, lr=1.00000e-03]
+Evaluation Classifier @ Epoch 4: 100% 4/4 [00:00<00:00,  4.08it/s, acc1=48.438, acc2=71.265, loss=1.356]
+Training Classifier @ Epoch 5: 100% 43/43 [00:08<00:00,  5.37it/s, acc1=48.540, acc2=70.971, loss=1.387, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 5: 100% 4/4 [00:00<00:00,  4.08it/s, acc1=48.975, acc2=71.655, loss=1.349]
+Training Classifier @ Epoch 6: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.447, acc2=71.069, loss=1.385, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 6: 100% 4/4 [00:00<00:00,  4.28it/s, acc1=48.975, acc2=71.631, loss=1.348]
+Training Classifier @ Epoch 7: 100% 43/43 [00:07<00:00,  5.45it/s, acc1=48.342, acc2=71.030, loss=1.386, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 7: 100% 4/4 [00:01<00:00,  3.96it/s, acc1=48.730, acc2=71.484, loss=1.347]
+Training Classifier @ Epoch 8: 100% 43/43 [00:08<00:00,  5.35it/s, acc1=48.665, acc2=71.237, loss=1.383, lr=1.00000e-04]
+Evaluation Classifier @ Epoch 8: 100% 4/4 [00:00<00:00,  4.22it/s, acc1=49.146, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 9: 100% 43/43 [00:07<00:00,  5.39it/s, acc1=48.342, acc2=71.123, loss=1.382, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 9: 100% 4/4 [00:00<00:00,  4.13it/s, acc1=49.048, acc2=71.729, loss=1.344]
+Training Classifier @ Epoch 10: 100% 43/43 [00:07<00:00,  5.46it/s, acc1=48.608, acc2=71.239, loss=1.380, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 10: 100% 4/4 [00:00<00:00,  4.30it/s, acc1=48.975, acc2=71.582, loss=1.345]
+Training Classifier @ Epoch 11: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.585, acc2=71.080, loss=1.382, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 11: 100% 4/4 [00:00<00:00,  4.10it/s, acc1=48.877, acc2=71.606, loss=1.345]
+Training Classifier @ Epoch 12: 100% 43/43 [00:08<00:00,  5.31it/s, acc1=48.667, acc2=71.082, loss=1.383, lr=1.00000e-05]
+Evaluation Classifier @ Epoch 12: 100% 4/4 [00:00<00:00,  4.08it/s, acc1=48.975, acc2=71.631, loss=1.345]
+Training Classifier @ Epoch 13: 100% 43/43 [00:07<00:00,  5.39it/s, acc1=48.760, acc2=71.264, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 13: 100% 4/4 [00:00<00:00,  4.27it/s, acc1=48.877, acc2=71.509, loss=1.345]
+Training Classifier @ Epoch 14: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.694, acc2=71.021, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 14: 100% 4/4 [00:00<00:00,  4.17it/s, acc1=48.828, acc2=71.606, loss=1.345]
+Training Classifier @ Epoch 15: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.635, acc2=71.151, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 15: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.877, acc2=71.680, loss=1.344]
+Training Classifier @ Epoch 16: 100% 43/43 [00:08<00:00,  5.34it/s, acc1=48.662, acc2=71.205, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 16: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.804, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 17: 100% 43/43 [00:08<00:00,  5.37it/s, acc1=48.799, acc2=71.310, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 17: 100% 4/4 [00:00<00:00,  4.24it/s, acc1=48.975, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 18: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.660, acc2=71.314, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 18: 100% 4/4 [00:00<00:00,  4.02it/s, acc1=48.877, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 19: 100% 43/43 [00:08<00:00,  5.34it/s, acc1=48.844, acc2=71.250, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 19: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=48.975, acc2=71.704, loss=1.345]
+(Epoch: 19) > Model Saved.
+Training Classifier @ Epoch 20: 100% 43/43 [00:07<00:00,  5.39it/s, acc1=48.817, acc2=71.239, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 20: 100% 4/4 [00:00<00:00,  4.25it/s, acc1=48.779, acc2=71.484, loss=1.345]
+Training Classifier @ Epoch 21: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.537, acc2=71.094, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 21: 100% 4/4 [00:00<00:00,  4.06it/s, acc1=48.926, acc2=71.411, loss=1.345]
+Training Classifier @ Epoch 22: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.783, acc2=70.837, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 22: 100% 4/4 [00:00<00:00,  4.34it/s, acc1=48.804, acc2=71.704, loss=1.344]
+Training Classifier @ Epoch 23: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.449, acc2=71.085, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 23: 100% 4/4 [00:00<00:00,  4.18it/s, acc1=49.023, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 24: 100% 43/43 [00:07<00:00,  5.48it/s, acc1=48.631, acc2=71.269, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 24: 100% 4/4 [00:00<00:00,  4.21it/s, acc1=48.950, acc2=71.533, loss=1.345]
+Training Classifier @ Epoch 25: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.612, acc2=71.214, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 25: 100% 4/4 [00:00<00:00,  4.11it/s, acc1=48.877, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 26: 100% 43/43 [00:07<00:00,  5.46it/s, acc1=48.537, acc2=71.089, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 26: 100% 4/4 [00:00<00:00,  4.27it/s, acc1=48.877, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 27: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.549, acc2=71.085, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 27: 100% 4/4 [00:00<00:00,  4.30it/s, acc1=48.950, acc2=71.704, loss=1.344]
+Training Classifier @ Epoch 28: 100% 43/43 [00:07<00:00,  5.49it/s, acc1=48.826, acc2=71.273, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 28: 100% 4/4 [00:00<00:00,  4.17it/s, acc1=48.877, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 29: 100% 43/43 [00:07<00:00,  5.46it/s, acc1=48.824, acc2=71.434, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 29: 100% 4/4 [00:00<00:00,  4.09it/s, acc1=48.755, acc2=71.387, loss=1.345]
+Training Classifier @ Epoch 30: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=48.565, acc2=71.189, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 30: 100% 4/4 [00:00<00:00,  4.09it/s, acc1=48.828, acc2=71.606, loss=1.345]
+Training Classifier @ Epoch 31: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.571, acc2=71.126, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 31: 100% 4/4 [00:00<00:00,  4.10it/s, acc1=48.779, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 32: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.492, acc2=71.112, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 32: 100% 4/4 [00:00<00:00,  4.33it/s, acc1=48.657, acc2=71.582, loss=1.345]
+Training Classifier @ Epoch 33: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.524, acc2=71.180, loss=1.385, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 33: 100% 4/4 [00:00<00:00,  4.11it/s, acc1=48.828, acc2=71.631, loss=1.345]
+Training Classifier @ Epoch 34: 100% 43/43 [00:08<00:00,  5.36it/s, acc1=48.767, acc2=71.207, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 34: 100% 4/4 [00:00<00:00,  4.19it/s, acc1=48.877, acc2=71.411, loss=1.346]
+Training Classifier @ Epoch 35: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.671, acc2=71.203, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 35: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=48.901, acc2=71.606, loss=1.344]
+Training Classifier @ Epoch 36: 100% 43/43 [00:07<00:00,  5.47it/s, acc1=48.721, acc2=71.250, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 36: 100% 4/4 [00:00<00:00,  4.13it/s, acc1=48.828, acc2=71.582, loss=1.345]
+Training Classifier @ Epoch 37: 100% 43/43 [00:08<00:00,  5.36it/s, acc1=48.671, acc2=71.078, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 37: 100% 4/4 [00:00<00:00,  4.14it/s, acc1=48.901, acc2=71.680, loss=1.345]
+Training Classifier @ Epoch 38: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.567, acc2=71.055, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 38: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.901, acc2=71.582, loss=1.344]
+Training Classifier @ Epoch 39: 100% 43/43 [00:08<00:00,  5.34it/s, acc1=48.551, acc2=71.107, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 39: 100% 4/4 [00:00<00:00,  4.23it/s, acc1=48.828, acc2=71.558, loss=1.344]
+(Epoch: 39) > Model Saved.
+Training Classifier @ Epoch 40: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.533, acc2=71.110, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 40: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=48.901, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 41: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.728, acc2=71.362, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 41: 100% 4/4 [00:00<00:00,  4.33it/s, acc1=48.730, acc2=71.680, loss=1.345]
+Training Classifier @ Epoch 42: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.678, acc2=71.334, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 42: 100% 4/4 [00:00<00:00,  4.34it/s, acc1=48.999, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 43: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.440, acc2=71.253, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 43: 100% 4/4 [00:00<00:00,  4.14it/s, acc1=48.999, acc2=71.484, loss=1.344]
+Training Classifier @ Epoch 44: 100% 43/43 [00:07<00:00,  5.39it/s, acc1=48.522, acc2=70.989, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 44: 100% 4/4 [00:00<00:00,  4.19it/s, acc1=49.023, acc2=71.704, loss=1.345]
+Training Classifier @ Epoch 45: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.585, acc2=71.278, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 45: 100% 4/4 [00:00<00:00,  4.22it/s, acc1=48.828, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 46: 100% 43/43 [00:08<00:00,  5.19it/s, acc1=48.626, acc2=71.344, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 46: 100% 4/4 [00:00<00:00,  4.14it/s, acc1=48.950, acc2=71.484, loss=1.344]
+Training Classifier @ Epoch 47: 100% 43/43 [00:08<00:00,  5.19it/s, acc1=48.510, acc2=71.028, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 47: 100% 4/4 [00:00<00:00,  4.17it/s, acc1=49.072, acc2=71.655, loss=1.344]
+Training Classifier @ Epoch 48: 100% 43/43 [00:08<00:00,  5.20it/s, acc1=48.610, acc2=71.191, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 48: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=48.950, acc2=71.582, loss=1.344]
+Training Classifier @ Epoch 49: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.644, acc2=71.228, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 49: 100% 4/4 [00:00<00:00,  4.23it/s, acc1=48.779, acc2=71.606, loss=1.345]
+Training Classifier @ Epoch 50: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.724, acc2=71.282, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 50: 100% 4/4 [00:00<00:00,  4.15it/s, acc1=48.901, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 51: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.608, acc2=71.139, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 51: 100% 4/4 [00:00<00:00,  4.32it/s, acc1=48.804, acc2=71.509, loss=1.344]
+Training Classifier @ Epoch 52: 100% 43/43 [00:07<00:00,  5.45it/s, acc1=48.758, acc2=71.164, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 52: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.828, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 53: 100% 43/43 [00:07<00:00,  5.47it/s, acc1=48.492, acc2=71.021, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 53: 100% 4/4 [00:00<00:00,  4.30it/s, acc1=48.999, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 54: 100% 43/43 [00:07<00:00,  5.45it/s, acc1=48.696, acc2=71.028, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 54: 100% 4/4 [00:00<00:00,  4.30it/s, acc1=48.779, acc2=71.631, loss=1.345]
+Training Classifier @ Epoch 55: 100% 43/43 [00:07<00:00,  5.51it/s, acc1=48.712, acc2=71.196, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 55: 100% 4/4 [00:00<00:00,  4.39it/s, acc1=48.950, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 56: 100% 43/43 [00:07<00:00,  5.50it/s, acc1=48.656, acc2=71.346, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 56: 100% 4/4 [00:00<00:00,  4.22it/s, acc1=48.975, acc2=71.606, loss=1.344]
+Training Classifier @ Epoch 57: 100% 43/43 [00:08<00:00,  5.36it/s, acc1=48.728, acc2=71.191, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 57: 100% 4/4 [00:00<00:00,  4.07it/s, acc1=48.804, acc2=71.484, loss=1.344]
+Training Classifier @ Epoch 58: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.962, acc2=71.219, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 58: 100% 4/4 [00:00<00:00,  4.17it/s, acc1=48.926, acc2=71.460, loss=1.344]
+Training Classifier @ Epoch 59: 100% 43/43 [00:07<00:00,  5.52it/s, acc1=48.494, acc2=71.073, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 59: 100% 4/4 [00:00<00:00,  4.27it/s, acc1=48.804, acc2=71.558, loss=1.344]
+(Epoch: 59) > Model Saved.
+Training Classifier @ Epoch 60: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=48.578, acc2=70.903, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 60: 100% 4/4 [00:00<00:00,  4.25it/s, acc1=48.901, acc2=71.509, loss=1.344]
+Training Classifier @ Epoch 61: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.774, acc2=71.191, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 61: 100% 4/4 [00:00<00:00,  4.42it/s, acc1=48.877, acc2=71.436, loss=1.344]
+Training Classifier @ Epoch 62: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.388, acc2=71.189, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 62: 100% 4/4 [00:00<00:00,  4.26it/s, acc1=48.950, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 63: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.794, acc2=71.269, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 63: 100% 4/4 [00:00<00:00,  4.37it/s, acc1=48.901, acc2=71.704, loss=1.345]
+Training Classifier @ Epoch 64: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.472, acc2=71.119, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 64: 100% 4/4 [00:00<00:00,  4.21it/s, acc1=49.072, acc2=71.582, loss=1.344]
+Training Classifier @ Epoch 65: 100% 43/43 [00:07<00:00,  5.46it/s, acc1=48.449, acc2=71.096, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 65: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.975, acc2=71.680, loss=1.344]
+Training Classifier @ Epoch 66: 100% 43/43 [00:08<00:00,  5.35it/s, acc1=48.737, acc2=71.239, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 66: 100% 4/4 [00:00<00:00,  4.21it/s, acc1=48.926, acc2=71.582, loss=1.344]
+Training Classifier @ Epoch 67: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.705, acc2=71.030, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 67: 100% 4/4 [00:00<00:00,  4.34it/s, acc1=48.950, acc2=71.680, loss=1.345]
+Training Classifier @ Epoch 68: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.740, acc2=71.205, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 68: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.999, acc2=71.606, loss=1.344]
+Training Classifier @ Epoch 69: 100% 43/43 [00:08<00:00,  5.37it/s, acc1=48.701, acc2=71.066, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 69: 100% 4/4 [00:00<00:00,  4.30it/s, acc1=48.950, acc2=71.411, loss=1.344]
+Training Classifier @ Epoch 70: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.676, acc2=71.112, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 70: 100% 4/4 [00:00<00:00,  4.25it/s, acc1=48.755, acc2=71.631, loss=1.344]
+Training Classifier @ Epoch 71: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.606, acc2=71.237, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 71: 100% 4/4 [00:00<00:00,  4.16it/s, acc1=48.853, acc2=71.655, loss=1.344]
+Training Classifier @ Epoch 72: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.628, acc2=71.053, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 72: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=48.877, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 73: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.558, acc2=70.985, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 73: 100% 4/4 [00:00<00:00,  4.06it/s, acc1=48.779, acc2=71.460, loss=1.345]
+Training Classifier @ Epoch 74: 100% 43/43 [00:07<00:00,  5.48it/s, acc1=48.960, acc2=71.082, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 74: 100% 4/4 [00:00<00:00,  4.18it/s, acc1=48.804, acc2=71.484, loss=1.345]
+Training Classifier @ Epoch 75: 100% 43/43 [00:08<00:00,  5.33it/s, acc1=48.687, acc2=71.298, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 75: 100% 4/4 [00:00<00:00,  4.24it/s, acc1=48.975, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 76: 100% 43/43 [00:08<00:00,  5.36it/s, acc1=48.658, acc2=71.228, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 76: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=48.926, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 77: 100% 43/43 [00:07<00:00,  5.48it/s, acc1=48.780, acc2=71.148, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 77: 100% 4/4 [00:00<00:00,  4.28it/s, acc1=48.901, acc2=71.509, loss=1.344]
+Training Classifier @ Epoch 78: 100% 43/43 [00:08<00:00,  5.32it/s, acc1=48.796, acc2=71.289, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 78: 100% 4/4 [00:00<00:00,  4.24it/s, acc1=48.999, acc2=71.753, loss=1.344]
+Training Classifier @ Epoch 79: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.626, acc2=71.180, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 79: 100% 4/4 [00:00<00:00,  4.19it/s, acc1=48.999, acc2=71.558, loss=1.343]
+(Epoch: 79) > Model Saved.
+Training Classifier @ Epoch 80: 100% 43/43 [00:08<00:00,  5.07it/s, acc1=48.519, acc2=71.253, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 80: 100% 4/4 [00:00<00:00,  4.19it/s, acc1=48.755, acc2=71.533, loss=1.345]
+Training Classifier @ Epoch 81: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.803, acc2=71.325, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 81: 100% 4/4 [00:00<00:00,  4.08it/s, acc1=48.926, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 82: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.792, acc2=71.101, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 82: 100% 4/4 [00:00<00:00,  4.12it/s, acc1=48.828, acc2=71.606, loss=1.345]
+Training Classifier @ Epoch 83: 100% 43/43 [00:07<00:00,  5.45it/s, acc1=48.724, acc2=71.264, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 83: 100% 4/4 [00:00<00:00,  4.31it/s, acc1=48.926, acc2=71.655, loss=1.344]
+Training Classifier @ Epoch 84: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=48.656, acc2=71.030, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 84: 100% 4/4 [00:00<00:00,  4.12it/s, acc1=48.804, acc2=71.606, loss=1.344]
+Training Classifier @ Epoch 85: 100% 43/43 [00:08<00:00,  5.35it/s, acc1=48.760, acc2=71.176, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 85: 100% 4/4 [00:00<00:00,  4.20it/s, acc1=49.170, acc2=71.851, loss=1.344]
+Training Classifier @ Epoch 86: 100% 43/43 [00:07<00:00,  5.47it/s, acc1=48.626, acc2=71.173, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 86: 100% 4/4 [00:00<00:00,  4.29it/s, acc1=48.828, acc2=71.704, loss=1.344]
+Training Classifier @ Epoch 87: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.535, acc2=71.230, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 87: 100% 4/4 [00:00<00:00,  4.18it/s, acc1=48.950, acc2=71.533, loss=1.344]
+Training Classifier @ Epoch 88: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.581, acc2=71.089, loss=1.383, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 88: 100% 4/4 [00:00<00:00,  4.27it/s, acc1=48.950, acc2=71.704, loss=1.345]
+Training Classifier @ Epoch 89: 100% 43/43 [00:07<00:00,  5.48it/s, acc1=48.835, acc2=71.310, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 89: 100% 4/4 [00:00<00:00,  4.37it/s, acc1=48.975, acc2=71.509, loss=1.344]
+Training Classifier @ Epoch 90: 100% 43/43 [00:07<00:00,  5.44it/s, acc1=48.578, acc2=71.266, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 90: 100% 4/4 [00:00<00:00,  4.24it/s, acc1=48.901, acc2=71.655, loss=1.344]
+Training Classifier @ Epoch 91: 100% 43/43 [00:07<00:00,  5.45it/s, acc1=48.333, acc2=71.107, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 91: 100% 4/4 [00:00<00:00,  4.29it/s, acc1=48.853, acc2=71.558, loss=1.345]
+Training Classifier @ Epoch 92: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=48.676, acc2=71.325, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 92: 100% 4/4 [00:00<00:00,  4.11it/s, acc1=48.975, acc2=71.606, loss=1.343]
+Training Classifier @ Epoch 93: 100% 43/43 [00:07<00:00,  5.38it/s, acc1=48.413, acc2=70.867, loss=1.382, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 93: 100% 4/4 [00:00<00:00,  4.21it/s, acc1=48.926, acc2=71.387, loss=1.345]
+Training Classifier @ Epoch 94: 100% 43/43 [00:07<00:00,  5.41it/s, acc1=48.549, acc2=71.030, loss=1.381, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 94: 100% 4/4 [00:00<00:00,  4.29it/s, acc1=48.755, acc2=71.631, loss=1.344]
+Training Classifier @ Epoch 95: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.606, acc2=71.057, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 95: 100% 4/4 [00:00<00:00,  4.10it/s, acc1=49.023, acc2=71.631, loss=1.344]
+Training Classifier @ Epoch 96: 100% 43/43 [00:07<00:00,  5.42it/s, acc1=48.887, acc2=71.312, loss=1.379, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 96: 100% 4/4 [00:00<00:00,  4.33it/s, acc1=48.975, acc2=71.680, loss=1.343]
+Training Classifier @ Epoch 97: 100% 43/43 [00:07<00:00,  5.43it/s, acc1=48.624, acc2=71.210, loss=1.378, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 97: 100% 4/4 [00:00<00:00,  4.22it/s, acc1=48.877, acc2=71.558, loss=1.344]
+Training Classifier @ Epoch 98: 100% 43/43 [00:07<00:00,  5.40it/s, acc1=48.749, acc2=71.250, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 98: 100% 4/4 [00:00<00:00,  4.34it/s, acc1=48.950, acc2=71.509, loss=1.344]
+Training Classifier @ Epoch 99: 100% 43/43 [00:07<00:00,  5.40it/s, acc1=48.817, acc2=71.191, loss=1.380, lr=1.00000e-06]
+Evaluation Classifier @ Epoch 99: 100% 4/4 [00:00<00:00,  4.34it/s, acc1=49.023, acc2=71.460, loss=1.344]
+(Epoch: 99) > Model Saved.
+Evaluation Classifier: 100% 9/9 [00:01<00:00,  4.87it/s, acc1=48.079, acc2=70.649, loss=1.387]
