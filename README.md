@@ -21,7 +21,7 @@ The $g_{K}(X,y)$ function applies K different rotations to the input image $X$ a
 
 $$ y = \{0,1,\dots,K-1\}$$
 
-In the proxy problem, we are looking for a neural network ($F$) that can find the amount of rotation. Since there are K different rotations, we have a K-class classification problem. Therefore, the neural network $F$ is trained to find the probability of each of the K rotations. The probablity of $\frac{2\pi}{K} y^{\star}$ rotation is defined as follows:
+In the proxy problem, we are looking for a neural network ( $F$ ) that can find the amount of rotation. Since there are K different rotations, we have a K-class classification problem. Therefore, the neural network $F$ is trained to find the probability of each of the K rotations. The probablity of $\frac{2\pi}{K} y^{\star}$ rotation is defined as follows:
 
 $$ F^{y^{\star}}(\hat{x}|\theta)$$
 
