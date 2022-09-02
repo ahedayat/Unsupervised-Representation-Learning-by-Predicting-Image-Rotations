@@ -13,7 +13,7 @@
 
 # Proxy Problem
 
-For self-supervised representation learning, a neural network is trained to predict the rotation applied to the input image. If the function $ Rot(X, \phi) $ rotates the input image $X$ by $\phi$ degrees, the function $g_{K}(X,y)$ is defined as follows:
+For self-supervised representation learning, a neural network is trained to predict the rotation applied to the input image. If the function $Rot(X, \phi)$ rotates the input image $X$ by $\phi$ degrees, the function $g_{K}(X,y)$ is defined as follows:
 
 $$g_{K}(X,y) = Rot(X, \frac{2\pi}{K} y)$$
 
