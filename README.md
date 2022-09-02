@@ -82,14 +82,14 @@ $$ \min_{\theta} Loss(D, \theta) $$
 </ul>
 
 <table style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-    <tbody>
+    <tbody style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         <tr>
             <td>
                 <img src="./plots/EDA/train_label_images.png" alt="Sample from Cifar-10 Training Data" style="width: 40rem"/>
             </td>
         </tr>
         <tr>
-        	<td style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
+        	<td>
         		A sample from Training Data
         	</td>
         </tr>
@@ -97,13 +97,13 @@ $$ \min_{\theta} Loss(D, \theta) $$
 </table>
 
 <table style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-    <tbody>
+    <tbody style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         <tr>
             <td>
                 <img src="./plots/EDA/test_label_images.png" alt="Sample from Cifar-10 Testing Data" style="width: 40rem"/>
             </td>
         </tr>
-        <tr style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
+        <tr>
         	<td>
         		A sample from Testing Data
         	</td>
