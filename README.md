@@ -32,10 +32,9 @@ The loss value for input $X_{i}$ is calculated as follows:
 
 $$loss(X_{i}, \theta) = -\frac{1}{K} \sum_{y=1}^{K}{log( F^{y}(g(X_{i},y)|\theta) )}$$
 
-Therefore, the totall loss value for dataset $ D=\{X_{i}\}_{i=1}^{N}$ is:
+Therefore, the totall loss value for dataset $ D=\{X_{i} | 1 \le i \le N \}$ is:
 
 $$ Loss(D, \theta) = \frac{1}{N} \sum_{i=1}^{N}{loss(X_{i},\theta)} $$
-
 
 # Objective
 In this problem, the objective is to reduce the totall loss value, or in other words, the goal is to increase the probability of correctly detecting a rotation.
