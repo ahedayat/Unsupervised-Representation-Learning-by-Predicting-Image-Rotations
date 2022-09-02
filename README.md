@@ -103,8 +103,8 @@ $$ \min_{\theta} Loss(D, \theta) $$
                 <img src="./plots/EDA/test_label_images.png" alt="Sample from Cifar-10 Testing Data" style="width: 40rem"/>
             </td>
         </tr>
-        <tr style="text-align: center">
-        	<td style="text-align: center">
+        <tr style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
+        	<td style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         		A sample from Testing Data
         	</td>
         </tr>
