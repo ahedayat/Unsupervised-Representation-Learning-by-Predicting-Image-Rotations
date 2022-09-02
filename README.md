@@ -42,7 +42,7 @@ In this problem, the objective is to reduce the totall loss value, or in other w
 $$ \min_{\theta} Loss(D, \theta) $$
 
 <table style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-    <tbody>
+    <tbody style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         <tr>
             <td>
                 <img src="./plots/paper/Rotation_Prediction.png" alt="Sample from Cifar-10 Testing Data" style="width: 50rem"/>
