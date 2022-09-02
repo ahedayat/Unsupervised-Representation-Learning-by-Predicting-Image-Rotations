@@ -89,7 +89,7 @@ $$ \min_{\theta} Loss(D, \theta) $$
             </td>
         </tr>
         <tr>
-        	<td>
+        	<td style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         		A sample from Training Data
         	</td>
         </tr>
@@ -104,7 +104,7 @@ $$ \min_{\theta} Loss(D, \theta) $$
             </td>
         </tr>
         <tr style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-        	<td style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
+        	<td>
         		A sample from Testing Data
         	</td>
         </tr>
