@@ -32,7 +32,7 @@ The loss value for input $X_{i}$ is calculated as follows:
 
 $$loss(X_{i}, \theta) = -\frac{1}{K} \sum_{y=1}^{K}{log( F^{y}(g(X_{i},y)|\theta) )}$$
 
-Therefore, the totall loss value for dataset $ D=\{X_{i} | 1 \leq i \leq N \}$ is:
+Therefore, the totall loss value for dataset $D=\{X_{i} | 1 \leq i \leq N \}$ is:
 
 $$ Loss(D, \theta) = \frac{1}{N} \sum_{i=1}^{N}{loss(X_{i},\theta)} $$
 
