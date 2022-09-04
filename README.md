@@ -32,7 +32,7 @@ The loss value for input $X_{i}$ is calculated as follows:
 
 $$loss(X_{i}, \theta) = -\frac{1}{K} \sum_{y=1}^{K}{log( F^{y}(g(X_{i},y)|\theta) )}$$
 
-Therefore, the totall loss value for dataset $ D=\{X_{i} | 1 \le i \le N \}$ is:
+Therefore, the totall loss value for dataset $D=\{X_{i} | 1 \le i \le N \}$ is:
 
 $$ Loss(D, \theta) = \frac{1}{N} \sum_{i=1}^{N}{loss(X_{i},\theta)} $$
 
@@ -42,7 +42,7 @@ In this problem, the objective is to reduce the totall loss value, or in other w
 $$ \min_{\theta} Loss(D, \theta) $$
 
 <table style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-    <tbody>
+    <tbody style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         <tr>
             <td>
                 <img src="./plots/paper/Rotation_Prediction.png" alt="Sample from Cifar-10 Testing Data" style="width: 50rem"/>
@@ -94,7 +94,7 @@ The input image can be classified with the representations of intermediate layer
 </ul>
 
 <table style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-    <tbody>
+    <tbody style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         <tr>
             <td>
                 <img src="./plots/EDA/train_label_images.png" alt="Sample from Cifar-10 Training Data" style="width: 40rem"/>
@@ -109,7 +109,7 @@ The input image can be classified with the representations of intermediate layer
 </table>
 
 <table style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
-    <tbody>
+    <tbody style="text-align: center margin-left: auto; margin-right: auto; text-align: center" border=0 align=center>
         <tr>
             <td>
                 <img src="./plots/EDA/test_label_images.png" alt="Sample from Cifar-10 Testing Data" style="width: 40rem"/>
@@ -628,3 +628,44 @@ The training parameters of classifier in both methods are listed in the table be
         </tr>
     </tbody>
 </table>
+
+# Discussion
+
+According to the final accuracy table, for both training methods, the top-1 and top-2 accuracy for the second layer is better than the others. This seems to be quite reasonable, because:
+
+<ul>
+    <li>
+        As we go towards the end layers in the neural network, the receptive field increases and this larger receptive field is suitable for classification.
+    </li>
+    <li>
+        On the other hand, in the end layers, the attention to details is more, and this is not suitable for classifying images on a dataset such as Cifar-10, where there is only one object in the image.
+    </li>
+</ul>
+
+Therefore, it seems reasonable to use middle residual block representations.
+
+# Pretrained Models & Reports
+
+All pretrained models and reports are in the following link:
+
+<ul>
+    <li>
+        <a href="https://drive.google.com/drive/folders/16hliL2r6p1_CkJmtov9MDS3ANfRd8296?usp=sharing">
+            link
+        </a>
+    </li>
+</ul>
+
+# Refrences
+<ul>
+    <li>
+        <a href="https://arxiv.org/abs/1803.07728"> 
+            Spyros Gidaris, Praveer Singh, and Nikos Komodakis, “<strong>Unsupervised Representation Learning by Predicting Image Rotations</strong>”, arXiv:1803.07728v1 [cs.CV], Mar. 2018.
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/yangqiongyongyu/Network-In-Network-Pytorch/blob/master/models/nin.py">
+            https://github.com/yangqiongyongyu/Network-In-Network-Pytorch/blob/master/models/nin.py
+        </a>
+    </li>
+</ul>
